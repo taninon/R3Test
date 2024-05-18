@@ -12,6 +12,4 @@ public class R3ThrottleFirstTest : MonoBehaviour
 			.ThrottleFirst(TimeSpan.FromSeconds(2))
 			.Subscribe(_ => Debug.Log("クリックされた！"));
 	}
-
-
 }
