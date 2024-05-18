@@ -15,5 +15,10 @@ public class R3ReactivePropertyTest : MonoBehaviour
 		_count.Value = 2;
 		_count.Value = 2;
 		_count.Value = 4;
+
+		_count.OnNext(4);
 	}
+
+
+
 }
