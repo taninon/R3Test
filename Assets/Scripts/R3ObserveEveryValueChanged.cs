@@ -1,4 +1,5 @@
 using R3;
+using R3.Triggers;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,10 @@ public class R3ObserveEveryValueChanged : MonoBehaviour
 		uiText.text = "Test4";
 
 		StartCoroutine(Test());
+
+		this.OnCollisionEnterAsObservable()
+			.Subscribe(_ => Debug.Log("Õ“Ë‚µ‚½I"))
+			.AddTo(this);
 	}
 
 	IEnumerator Test()
