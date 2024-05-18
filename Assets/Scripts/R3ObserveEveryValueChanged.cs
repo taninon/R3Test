@@ -20,6 +20,7 @@ public class R3ObserveEveryValueChanged : MonoBehaviour
 		uiText.text = "Test3";
 		uiText.text = "Test4";
 
+
 		StartCoroutine(Test());
 
 		this.OnCollisionEnterAsObservable()
