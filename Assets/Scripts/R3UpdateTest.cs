@@ -20,7 +20,7 @@ public class R3UpdateTest : MonoBehaviour
 
 	private void Move(Vector3 direction)
 	{
-		_rigidbody.velocity = direction * Time.deltaTime * speed;
+		_rigidbody.linearVelocity = direction * Time.deltaTime * speed;
 	}
 
 	private void Jump()
