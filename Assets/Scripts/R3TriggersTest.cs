@@ -1,4 +1,4 @@
-using R3;
+﻿using R3;
 using R3.Triggers;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class R3TriggersTest : MonoBehaviour
 	{
 		this.OnMouseEnterAsObservable()
 			.Select(_ => Input.mousePosition)
-			.Subscribe(pos => Debug.Log("Pos:" + pos));
+			.Subscribe(pos => Debug.Log("Pos:" + pos))
+			.AddTo(this);
 	}
 }

@@ -1,4 +1,4 @@
-using R3;
+Ôªøusing R3;
 using R3.Triggers;
 using System.Collections;
 using TMPro;
@@ -12,31 +12,13 @@ public class R3ObserveEveryValueChanged : MonoBehaviour
 	void Start()
 	{
 		Observable.EveryValueChanged(uiText, t => t.text)
-			.Subscribe(text => Debug.Log("ÉeÉLÉXÉgÇÃì‡óe:" + text))
+			.Subscribe(text => Debug.Log("„ÉÜ„Ç≠„Çπ„Éà„ÅÆÂÜÖÂÆπ:" + text))
 			.AddTo(this);
 
 		uiText.text = "Test1";
 		uiText.text = "Test2";
 		uiText.text = "Test3";
 		uiText.text = "Test4";
-
-
-		StartCoroutine(Test());
-
-		this.OnCollisionEnterAsObservable()
-			.Subscribe(_ => Debug.Log("è’ìÀÇµÇΩÅI"))
-			.AddTo(this);
 	}
 
-	IEnumerator Test()
-	{
-		yield return null;
-		uiText.text = "CorTest1";
-		yield return null;
-		uiText.text = "CorTest2";
-		yield return null;
-		uiText.text = "CorTest3";
-		yield return null;
-		uiText.text = "CorTest4";
-	}
 }

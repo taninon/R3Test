@@ -1,17 +1,17 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using R3;
 using R3.Triggers;
 using System;
 using UnityEngine.TextCore;
+using UnityEngine.InputSystem;
 
 public class R3DoubleClick : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.UpdateAsObservable()
-            .Where(_ => Input.GetMouseButtonDown(0))
+            .Where(_ => Mouse.current.leftButton.wasPressedThisFrame)
             .TimeInterval()
             .Select(_ => _.Interval.TotalSeconds)
             .Chunk(2,1)
@@ -20,9 +20,5 @@ public class R3DoubleClick : MonoBehaviour
             .Subscribe(_ => { Debug.Log("double click!"); });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }
